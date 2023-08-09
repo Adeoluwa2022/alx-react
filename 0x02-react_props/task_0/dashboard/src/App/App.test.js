@@ -1,9 +1,10 @@
-import React from 'react';
-import { shallow } from 'enzyme';
 import App from './App';
+import { shallow } from 'enzyme';
+import logo from '../assets/holberton-logo.jpg';
 
-const wrapper = shallow(<App />);
-
-it('renders without crashing', () => {
-  shallow(<App />);
+describe('App', () => {
+  it('renders without crashing', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.exists());
+  });
 });

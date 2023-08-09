@@ -1,43 +1,36 @@
 import {
   FETCH_COURSE_SUCCESS,
-  SELECT_COURSE,
   UNSELECT_COURSE,
-} from '../actions/courseActionTypes';
+  SELECT_COURSE,
+} from "../actions/courseActionTypes";
 
-const courseReducer = (state = [], action) => {
+export const reducerCourse = (state = [], action) => {
   switch (action.type) {
     case FETCH_COURSE_SUCCESS:
       return action.data.map((course) => {
         return {
-          ...course,
+          id: course.id,
+          name: course.name,
+          credit: course.credit,
           isSelected: false,
         };
       });
-
     case SELECT_COURSE:
-      return state.map((course, index) => {
-        const current = {
-          ...course,
-        };
-        if (course.id == action.index) current.isSelected = true;
-
-        return current;
+      return state.map((course) => {
+        if (action.index === course.id) {
+          return { ...course, isSelected: true };
+        }
+        return { ...course };
       });
-
     case UNSELECT_COURSE:
       return state.map((course) => {
-        const current = {
-          ...course,
-        };
-        if (course.id == action.index) current.isSelected = false;
-
-        return current;
+        if (action.index === course.id) {
+          return { ...course, isSelected: false };
+        }
+        return { ...course };
       });
-
     default:
       break;
   }
   return state;
 };
-
-export default courseReducer;

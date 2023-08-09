@@ -1,26 +1,24 @@
-import React from 'react';
 import App from './App';
 import { shallow } from 'enzyme';
 
-describe('App tests', () => {
-	it('renders without crashing', () => {
-		const component = shallow(<App />);
-
-		expect(component).toBeDefined();
-	});
-	it('should render a div with the class App-header', () => {
-		const component = shallow(<App />);
-
-		expect(component.find('.App-header')).toBeDefined();
-	});
-	it('should render a div with the class App-body', () => {
-		const component = shallow(<App />);
-
-		expect(component.find('.App-body')).toBeDefined();
-	});
-	it('should render a div with the class App-footer', () => {
-		const component = shallow(<App />);
-
-		expect(component.find('.App-footer')).toBeDefined();
-	});
+describe('App', () => {
+  it('renders without crashing', () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.exists());
+  });
+  it("Test n°2", () => {
+    const wrapper = shallow(<App />);
+    wrapper.update();
+    expect(wrapper.find("div.App-header")).toHaveLength(0);
+  });
+  it("Test n°3", () => {
+    const wrapper = shallow(<App />);
+    wrapper.update();
+    expect(wrapper.find("div.App-body")).toHaveLength(1);
+  });
+  it("Test n°4", () => {
+    const wrapper = shallow(<App />);
+    wrapper.update();
+    expect(wrapper.find("div.App-footer")).toHaveLength(0);
+  });
 });
