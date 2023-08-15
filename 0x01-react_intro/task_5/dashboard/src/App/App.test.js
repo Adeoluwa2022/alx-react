@@ -1,24 +1,19 @@
 import App from './App';
 import { shallow } from 'enzyme';
+import React from 'react';
 
-describe('App', () => {
-  it('renders without crashing', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.exists());
-  });
-  it("Test n°2", () => {
-    const wrapper = shallow(<App />);
-    wrapper.update();
-    expect(wrapper.find("div.App-header")).toHaveLength(0);
-  });
-  it("Test n°3", () => {
-    const wrapper = shallow(<App />);
-    wrapper.update();
-    expect(wrapper.find("div.App-body")).toHaveLength(1);
-  });
-  it("Test n°4", () => {
-    const wrapper = shallow(<App />);
-    wrapper.update();
-    expect(wrapper.find("div.App-footer")).toHaveLength(0);
-  });
+const wrapper = shallow(<App />);
+
+test('checkin crashing issue', function () {
+  shallow(<App />);
+});
+
+test('checkin header', function () {
+  expect(wrapper.find('header.App-header').exists()).toEqual(true);
+});
+test('checkin body', function () {
+  expect(wrapper.find('body.App-body').exists()).toEqual(true);
+});
+test('checkin footer', function () {
+  expect(wrapper.find('footer.App-footer').exists()).toEqual(true);
 });

@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from '../assets/holberton-logo.jpg';
 import './App.css';
-import { getFullYear, getFooterCopy } from '../utils/utils';
+import Header from '../Header/Header.js';
+import Footer from '../Footer/Footer.js'
 import Login from '../Login/Login';
-import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
-import Notifications from '../Notifications/Notifications';
+import Notifications from '../Notifications';
 
-const year = getFullYear();
-const getFooter = getFooterCopy(false);
-
-export default function App() {
-    return (
-        <React.Fragment>
-            <Notifications />
-            <Header />
-            <Login />
-            <Footer />
-        </React.Fragment>
-    );
+function App() {
+  return (
+    <React.Fragment>
+      <div className="App">
+      <div id="root-notifications">
+    <Notifications/>
+    </div>
+        <Header/>
+      <Login/>
+      <Footer/>
+      </div>
+    </React.Fragment>
+  );
 }
 
-  
+export default App;

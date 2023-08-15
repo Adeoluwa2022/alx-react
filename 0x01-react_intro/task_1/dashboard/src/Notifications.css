@@ -1,4 +1,8 @@
 .Notifications {
-    padding: 70px;
-    border: 1px solid red;
+	border: 4px dotted var(--color--primary);
+	padding: 2rem;
+}
+
+:root {
+  --color--primary: #E10034;
 }

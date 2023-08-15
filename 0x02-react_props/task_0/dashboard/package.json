@@ -1,46 +1,51 @@
 {
   "name": "dashboard",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --mode development --config config/webpack.config.js",
-    "build": "webpack --config config/webpack.config.js",
-    "test": "jest"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://usfbelhadj.github.io/holbertonschool-web_react/",
   "dependencies": {
-    "@babel/core": "^7.17.2",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.2",
-    "babel-loader": "^9.1.2",
-    "css-loader": "^6.6.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "browserslist": "^2.11.3",
     "enzyme": "^3.11.0",
-    "image-webpack-loader": "^8.1.0",
-    "inline-source-map": "^0.6.2",
-    "jest": "^27.5.1",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "style-loader": "^3.3.1",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "react-scripts": "^1.1.5",
+    "web-vitals": "^1.1.2",
+    "webpack": "^5.44.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
-    "file-loader": "^6.2.0",
-    "webpack": "^5.75.0"
-  },
-  "jest": {
-    "setupFiles": [
-      "<rootDir>/config/setupTests.js"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|sass)$": "<rootDir>/__mocks__/styleMock.js",
-      "\\.(jpg|jpeg|png|gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
-    }
-  },
-  "description": ""
+    "bs-enzyme": "^0.6.1",
+    "enzyme-adapter-react-16": "^1.15.6"
+  }
 }

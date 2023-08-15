@@ -1,34 +1,12 @@
 .App-header {
-  color: red;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.App-header h1 {
-  align-self: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.9em;
-  font-weight: bold;
-}
-
-.App-header img {
-  width: 200px;
-}
-
-.App-body {
-  height: 550px;
-  padding-top: 50px;
-  padding-left: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.App-footer {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: italic;
-}
-
-.linea {
-  background-color: red;
-  height: 5px;
-}
+    display: flex;
+    color: #df3148;
+    align-items: center;
+    border-bottom: thick solid #df3148;
+  }
+  
+  .App-header h1 {
+    font-size: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+  }
